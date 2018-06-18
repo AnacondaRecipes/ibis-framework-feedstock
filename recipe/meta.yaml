@@ -11,7 +11,7 @@ source:
 
 build:
   number: 0
-  script: python setup.py install --single-version-externally-managed --record record.txt
+  script: ${PYTHON} setup.py install --single-version-externally-managed --record record.txt
 
 requirements:
   host:
@@ -27,8 +27,8 @@ requirements:
     - setuptools
     - six
     - sqlalchemy >=1.0.0
-    - thrift  # [py36]
-    - thrift <=0.9.3  # [not py36]
+    - thrift  # [py>=36]
+    - thrift <=0.9.3  # [py<36]
     - thriftpy <=0.3.9
     - toolz
 
@@ -45,8 +45,8 @@ requirements:
     - setuptools
     - six
     - sqlalchemy >=1.0.0
-    - thrift  # [py36]
-    - thrift <=0.9.3  # [not py36]
+    - thrift  # [py>=36]
+    - thrift <=0.9.3  # [py<36]
     - thriftpy <=0.3.9
     - toolz
 
