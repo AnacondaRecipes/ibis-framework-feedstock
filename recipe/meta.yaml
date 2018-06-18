@@ -1,4 +1,4 @@
-{% set version = "0.12.0" %}
+{% set version = "0.13.0" %}
 
 package:
   name: ibis-framework
@@ -7,7 +7,10 @@ package:
 source:
   fn: ibis-framework-{{ version }}.tar.gz
   url: https://pypi.io/packages/source/i/ibis-framework/ibis-framework-{{ version }}.tar.gz
-  md5: b452f718ab8c607b01405e8ee40abf86
+  md5: 9cbf564adf48ebfa4fda0a09ef258b70
+  patches:
+    - 0001-Python-3.7.0-async-is-a-keyword.patch
+    - 0002-rename-regex-as-re.patch
 
 build:
   number: 0

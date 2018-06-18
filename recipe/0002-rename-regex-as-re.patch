@@ -1,0 +1,12 @@
+diff -urN ibis-framework-0.13.0.orig/ibis/pandas/execution/strings.py ibis-framework-0.13.0/ibis/pandas/execution/strings.py
+--- ibis-framework-0.13.0.orig/ibis/pandas/execution/strings.py	2018-06-18 13:49:32.068064525 +0000
++++ ibis-framework-0.13.0/ibis/pandas/execution/strings.py	2018-06-18 13:50:18.397213150 +0000
+@@ -3,7 +3,7 @@
+ 
+ import six
+ 
+-import regex as re
++import re
+ 
+ import numpy as np
+ import pandas as pd
