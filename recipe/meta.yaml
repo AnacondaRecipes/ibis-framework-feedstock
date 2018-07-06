@@ -34,6 +34,9 @@ requirements:
     - thrift <=0.9.3  # [py<36]
     - thriftpy <=0.3.9
     - toolz
+    - functools32  # [py==27]
+    - pathlib2  # [py==27]
+
 
   run:
     - enum34  # [py27]
@@ -52,6 +55,8 @@ requirements:
     - thrift <=0.9.3  # [py<36]
     - thriftpy <=0.3.9
     - toolz
+    - functools32  # [py==27]
+    - pathlib2  # [py==27]
 
 test:
   requires:
