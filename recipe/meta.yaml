@@ -1,63 +1,49 @@
-{% set version = "0.13.0" %}
+{% set version = "0.14.0" %}
 
 package:
   name: ibis-framework
   version: {{ version }}
 
 source:
-  fn: ibis-framework-{{ version }}.tar.gz
   url: https://pypi.io/packages/source/i/ibis-framework/ibis-framework-{{ version }}.tar.gz
-  md5: 9cbf564adf48ebfa4fda0a09ef258b70
-  patches:
-    - 0001-Python-3.7.0-async-is-a-keyword.patch
-    - 0002-rename-regex-as-re.patch
+  md5: aec8054c198fd7e5ee44ec6844591e8f
 
 build:
   number: 0
   skip: True  # [ppc64le and py==27]
-  script: {{ PYTHON }} setup.py install --single-version-externally-managed --record record.txt
+  script: "{{ PYTHON }} -m pip install . --no-deps --ignore-installed -vvv"
 
 requirements:
   host:
-    - enum34  # [py27]
-    - graphviz
-    - impyla >=0.14.0
-    - multipledispatch
-    - numpy >=1.10.0
-    - pandas >=0.18.1
-    - psycopg2
+    - pip
     - python
-    - python-graphviz
     - setuptools
-    - six
-    - sqlalchemy >=1.0.0
-    - thrift  # [py>=36]
-    - thrift <=0.9.3  # [py<36]
-    - thriftpy <=0.3.9
-    - toolz
-    - functools32  # [py==27]
-    - pathlib2  # [py==27]
-
 
   run:
     - enum34  # [py27]
+    - funcsigs  # [py27]
+    - functools32  # [py27]
     - graphviz
     - impyla >=0.14.0
+    - lz4
     - multipledispatch
-    - numpy >=1.10.0
-    - pandas >=0.18.1
+    - numpy >=1.11
+    - pandas >=0.20
+    - pathlib2  # [py27]
     - psycopg2
+    - pyarrow >=0.6.0  # [osx or (linux and x86_64) or (win64 and (py35 or py36))]
+    - pymysql
+    - pytables >=3.0.0
     - python
     - python-graphviz
+    - python-hdfs >=2.0.16
+    - regex
     - setuptools
     - six
-    - sqlalchemy >=1.0.0
-    - thrift  # [py>=36]
-    - thrift <=0.9.3  # [py<36]
-    - thriftpy <=0.3.9
+    - sqlalchemy
+    - thrift <=0.9.3  # [py27]
+    - thriftpy <=0.3.9  # [py27]
     - toolz
-    - functools32  # [py==27]
-    - pathlib2     # [py==27]
 
 test:
   requires:
@@ -71,9 +57,13 @@ test:
     - ibis.hive.tests
     - ibis.impala  # [linux]
     - ibis.impala.tests  # [linux]
+    - ibis.pandas
+    - ibis.pandas.tests
     - ibis.spark
     - ibis.spark.tests
     - ibis.sql
+    - ibis.sql.postgres
+    - ibis.sql.postgres.tests
     - ibis.sql.presto
     - ibis.sql.presto.tests
     - ibis.sql.redshift
