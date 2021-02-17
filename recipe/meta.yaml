@@ -51,29 +51,19 @@ test:
     - mock  # [py27]
   imports:
     - ibis
-    - ibis.expr
-    - ibis.expr.tests
-    - ibis.hive
-    - ibis.hive.tests
-    - ibis.impala  # [linux]
-    - ibis.impala.tests  # [linux]
-    - ibis.pandas
-    - ibis.pandas.tests
-    - ibis.spark
-    - ibis.spark.tests
-    - ibis.sql
-    - ibis.sql.postgres
-    - ibis.sql.postgres.tests
-    - ibis.sql.presto
-    - ibis.sql.presto.tests
-    - ibis.sql.redshift
-    - ibis.sql.redshift.tests
-    - ibis.sql.sqlite
-    - ibis.sql.sqlite.tests
-    - ibis.sql.tests
-    - ibis.sql.vertica
-    - ibis.sql.vertica.tests
-    - ibis.tests
+    - ibis.backends.bigquery
+    - ibis.backends.clickhouse
+    - ibis.backends.csv
+    - ibis.backends.parquet
+    - ibis.backends.hdf5
+    - ibis.backends.impala
+    - ibis.backends.mysql
+    - ibis.backends.omniscidb  # [py<38]
+    - ibis.backends.pandas
+    - ibis.backends.postgres
+    - ibis.backends.pyspark
+    - ibis.backends.spark
+    - ibis.backends.sqlite
 
 about:
   license: Apache 2.0
