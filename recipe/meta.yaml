@@ -1,4 +1,4 @@
-{% set version = "1.3.0" %}
+{% set version = "1.4.0" %}
 
 package:
   name: ibis-framework
@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/i/ibis-framework/ibis-framework-{{ version }}.tar.gz
-  md5: 52d59b28f93c15bbb81391fcab4cdb8a
+  md5: d42c818fb6548ab48f9dd4be99b46c4b
 
 build:
   number: 0
